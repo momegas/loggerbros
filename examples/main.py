@@ -10,11 +10,8 @@ app.add_middleware(FastLoggerMiddleware, mode=Mode.dev)
 async def root(logger=Depends(FastLogger)):
 
     logger.info("Hello World info")
-    logger.info({"message": "testing json as first arg"})
-    logger.debug("Debuuuug", charis="is beautiful", megas="malaka")
-
-    logger.error(
-        "Erroooor!!!", extra={"foo": "bar"}, charis="is beautiful", megas="malaka"
-    )
+    logger.info({"message": "json as main log"})
+    logger.debug("Debuuuug", foo="foo", bar="bar")
+    logger.error("Erroooor!!!", obj={"foo": "bar"}, test="test")
 
     return {"message": "Hello World"}

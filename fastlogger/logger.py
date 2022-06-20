@@ -62,7 +62,7 @@ class FastLoggerMiddleware(BaseHTTPMiddleware):
         response.headers["request_id"] = request_id
 
         # Send data to loki or other indexer
-        logger.info(f"{request.url.__str__()} sent to loki")
+        # logger.info(f"{request.url.__str__()} sent to loki")
 
         return response
 
