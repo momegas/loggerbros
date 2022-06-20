@@ -59,3 +59,19 @@ INFO:     127.0.0.1:51995 - "GET / HTTP/1.1" 200 OK
 ```
 
 As you can see everything passed after the first logger argument is printed in the metadata section. You can use this section for debugging info.
+
+Running the previous example with `FULL` mode you get this output:
+
+```bash
+INFO:     Started server process [10912]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+{
+    "event": "Hello World info",
+    "level": "info",
+    "method": "GET",
+    "request_id": "8cff8349-3d24-495b-94d3-140ec46811fc",
+    "timestamp": "2022-06-20T19:42:38.527379Z",
+    "url": "http://127.0.0.1:8000/"
+}
+```
