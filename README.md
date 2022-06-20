@@ -16,7 +16,7 @@ A simple logger for fastapi.
 
 TL;DR? Check out the quick start example in ./examples/. There are a number of other examples in ./examples/\*.js.
 
-## Usage
+## Quick start
 
 First add the middleware like below.
 
@@ -58,4 +58,4 @@ ERROR:    Erroooor!!!        {"obj": {"foo": "bar"}, "test": "test"}
 INFO:     127.0.0.1:51995 - "GET / HTTP/1.1" 200 OK
 ```
 
-As you can see everything passed after the first logger argument is printed in the extras section. You can use this section for debugging info.
+As you can see everything passed after the first logger argument is printed in the metadata section. You can use this section for debugging info.
