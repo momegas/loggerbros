@@ -3,12 +3,13 @@ import uuid
 from fastapi import FastAPI, Request
 import structlog
 from starlette.middleware.base import BaseHTTPMiddleware
-from fastlogger.utils import pretty_print_for_dev
+from fastlogger.utils import pretty_print_for_dev, pretty_print_json
 import enum
 
 # creating enumerations using class
 class Mode(enum.Enum):
     dev = "dev"
+    full = "full"
     prod = "prod"
 
 
@@ -70,6 +71,8 @@ class FastLoggerMiddleware(BaseHTTPMiddleware):
 
         if self.mode == Mode.dev:
             return pretty_print_for_dev
+        elif self.mode == Mode.full:
+            return pretty_print_json
         # elif self.mode == Mode.prod:
         #     return pretty_print_for_prod
         else:
