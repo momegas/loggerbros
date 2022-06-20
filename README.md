@@ -12,9 +12,9 @@ A simple logger for fastapi.
 - [x] Fastapi dependency injection
 - [ ] Loki support
 
-## Quick start
+## Examples
 
-TL;DR? Check out the quick start example in ./examples/. There are a number of other examples in ./examples/\*.js.
+Check out the quick start example in ./examples/. There are a number of other examples in ./examples/\*.js.
 
 ## Quick start
 
