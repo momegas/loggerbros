@@ -3,7 +3,7 @@ import uuid
 from fastapi import FastAPI, Request
 import structlog
 from starlette.middleware.base import BaseHTTPMiddleware
-from fastlogger.utils import pretty_print_for_dev, pretty_print_json
+from loggerbros.utils import pretty_print_for_dev, pretty_print_json
 import enum
 
 # creating enumerations using class
@@ -16,11 +16,11 @@ class Mode(enum.Enum):
 logger = structlog.get_logger()
 
 
-def FastLogger():
+def Logger():
     return logger
 
 
-class FastLoggerMiddleware(BaseHTTPMiddleware):
+class LoggerbrosMiddleware(BaseHTTPMiddleware):
     def __init__(self, app: FastAPI, mode: Mode):
         super().__init__(app)
         self.mode = mode
@@ -41,7 +41,7 @@ class FastLoggerMiddleware(BaseHTTPMiddleware):
                 print_fn,
             ],
         )
-        logger.info("Fastapi logger initialized.")
+        logger.info(f"Fastapi logger initialized in {Mode.full} mode.")
 
     async def dispatch(self, request: Request, call_next):
         """

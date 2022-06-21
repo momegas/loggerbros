@@ -1,6 +1,6 @@
-# Logger buddy
+# Logger bros
 
-A simple logger for fastapi.
+A simple logger for fastapi with integrations for many logging tools like loki and logstash.
 
 ## Features
 
@@ -22,7 +22,7 @@ First add the middleware like below.
 
 ```python
 app = FastAPI()
-app.add_middleware(FastLoggerMiddleware, mode=Mode.dev)
+app.add_middleware(LoggerbrosMiddleware, mode=Mode.dev)
 
 ```
 
@@ -34,7 +34,7 @@ Log more like this:
 
 ```python
 @app.get("/")
-async def root(logger=Depends(FastLogger)):
+async def root(logger=Depends(Logger)):
 
     logger.info("Hello World info")
     logger.info({"message": "json as main log"})
