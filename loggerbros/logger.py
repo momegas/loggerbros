@@ -41,7 +41,7 @@ class LoggerbrosMiddleware(BaseHTTPMiddleware):
                 print_fn,
             ],
         )
-        logger.info(f"Loggerbros initialized in {self.mode} mode.")
+        logger.info(f"Loggerbros initialized in {self.mode.value} mode.")
 
     async def dispatch(self, request: Request, call_next):
         """
