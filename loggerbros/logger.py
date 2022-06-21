@@ -41,7 +41,7 @@ class LoggerbrosMiddleware(BaseHTTPMiddleware):
                 print_fn,
             ],
         )
-        logger.info(f"Fastapi logger initialized in {Mode.full} mode.")
+        logger.info(f"Loggerbros initialized in {Mode.full} mode.")
 
     async def dispatch(self, request: Request, call_next):
         """
